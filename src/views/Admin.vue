@@ -6,7 +6,7 @@
 <div>
     <div class="grid">
       <div v-for="item in presentes" :key="item.id" class="card">
-        <img :src="item.imagem" alt="Imagem" />
+        <img :src="getImagemUrl(item.imagem)" alt="Imagem" />
         <h3>{{ item.nome }}</h3>
         <p>{{ item.descricao }}</p>
 
@@ -40,6 +40,14 @@
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import api from '../services/api';
+
+const BACKEND_URL = 'https://seusite-backend.onrender.com';
+
+const getImagemUrl = (imagem) => {
+  if (!imagem) return '';
+  if (imagem.startsWith('http')) return imagem;
+  return `${BACKEND_URL}/images/${imagem}`;
+};
 
 const router = useRouter();
 const presentes = ref([]);

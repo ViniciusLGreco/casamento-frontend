@@ -4,7 +4,7 @@
 
     <div class="grid">
       <div v-for="item in presentes" :key="item.id" class="card">
-        <img :src="`/images/${item.imagem}`" alt="Imagem" />
+        <img :src="caminhoImagem(item.imagem)" alt="Imagem" />
         <h3>{{ item.nome }}</h3>
         <p>{{ item.descricao }}</p>
 
@@ -43,6 +43,11 @@
 import { ref, onMounted } from 'vue';
 import api from '../services/api';
 
+const URL_BACKEND = 'https://casamento-backend.onrender.com';
+const caminhoImagem = (nome) => {
+  if (!nome) return '';
+  return `${URL_BACKEND}/images/${nome}`;
+};
 const presentes = ref([]);
 const nome = ref('');
 const email = ref('');
