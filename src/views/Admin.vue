@@ -41,7 +41,7 @@ import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import api from '../services/api';
 
-const BACKEND_URL = 'https://seusite-backend.onrender.com';
+const BACKEND_URL = 'https://casamento-backend.onrender.com';
 
 const getImagemUrl = (imagem) => {
   if (!imagem) return '';
