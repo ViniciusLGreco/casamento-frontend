@@ -4,7 +4,7 @@
 
     <div class="grid">
       <div v-for="item in presentes" :key="item.id" class="card">
-        <img :src="item.imagem" alt="Imagem" />
+        <img :src="`/images/${item.imagem}`" alt="Imagem" />
         <h3>{{ item.nome }}</h3>
         <p>{{ item.descricao }}</p>
 
