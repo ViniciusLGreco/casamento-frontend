@@ -2,6 +2,7 @@
   "name": "lista-presentes-frontend",
   "version": "1.0.0",
   "scripts": {
+    "start": "node server.js",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
